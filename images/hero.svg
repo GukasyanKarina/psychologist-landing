@@ -1,6 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="480" height="600" viewBox="0 0 480 600">
-  <rect width="480" height="600" fill="#f1ece3"/>
-  <circle cx="240" cy="230" r="90" fill="#e3ddd2"/>
-  <rect x="120" y="340" width="240" height="140" rx="12" fill="#e3ddd2"/>
-  <text x="240" y="560" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#5c6270">Replace me — hero photo</text>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f1ece3"/>
+      <stop offset="100%" stop-color="#e3ddd2"/>
+    </linearGradient>
+  </defs>
+  <rect width="480" height="600" fill="url(#bg)"/>
+
+  <!-- abstract portrait silhouette -->
+  <circle cx="240" cy="215" r="82" fill="#1a2b46" opacity="0.85"/>
+  <path d="M 110 560
+           C 110 430, 180 380, 240 380
+           C 300 380, 370 430, 370 560
+           L 370 600 L 110 600 Z" fill="#1a2b46" opacity="0.85"/>
+  <circle cx="240" cy="215" r="82" fill="none" stroke="#c98a3e" stroke-width="3"/>
+
+  <text x="240" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#5c6270">Photo coming soon</text>
 </svg>

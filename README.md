@@ -43,5 +43,5 @@ These are manual, one-time, done through your own accounts — not something tha
 
 1. **Google Search Console** ([search.google.com/search-console](https://search.google.com/search-console)) — add the domain, verify ownership (HTML tag or DNS), submit `sitemap.xml`
 2. **Google Analytics** (optional but recommended) — create a GA4 property, add the tracking snippet to all 3 HTML files
-3. List the site in a couple of relevant coach directories (e.g. LinkedIn Services, Noomii) for backlinks
+3. List the site in a couple of relevant psychologist/therapy directories (e.g. Psychology Today, local directories) for backlinks
 4. Meta Ads setup (Instagram + Threads) — separate from SEO, see the project scope doc for what's included
