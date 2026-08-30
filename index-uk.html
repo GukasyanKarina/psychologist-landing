@@ -70,11 +70,12 @@
       <a href="#book">Записатись</a>
       <a href="#contacts">Контакти</a>
     </nav>
-    <div class="lang-switch">
-      <a href="index.html">EN</a>
-      <a href="index-uk.html" class="active">UK</a>
-      <a href="index-ru.html">RU</a>
-    </div>
+    <a href="#book" class="btn btn-primary btn-small header-cta">Записатись</a>
+    <select class="lang-select" aria-label="Мова" onchange="if(this.value) window.location.href=this.value;">
+      <option value="index.html">EN</option>
+      <option value="index-uk.html" selected>UK</option>
+      <option value="index-ru.html">RU</option>
+    </select>
     <button class="nav-toggle" id="nav-toggle" aria-label="Відкрити меню" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -85,22 +86,29 @@
 
   <section class="section hero" id="hero">
     <div class="container hero-inner reveal">
-      <div class="hero-photo">
-        <img src="images/hero.svg" alt="Плейсхолдер — фото Карини скоро з'явиться" width="480" height="600" loading="eager">
-      </div>
       <div class="hero-text">
         <p class="eyebrow">Психолог</p>
         <h1>Стабільний простір, щоб розібратись із тим, що вас турбує.</h1>
         <p class="lead">Карина проводить індивідуальну та сімейну терапію при тривозі, життєвих переходах і труднощах у стосунках — онлайн та офлайн.</p>
         <a href="#book" class="btn btn-primary">Записатись на сесію</a>
       </div>
+      <div class="hero-photo">
+        <img src="images/hero-illustration.svg" alt="" aria-hidden="true" width="480" height="600" loading="eager">
+      </div>
     </div>
   </section>
 
-  <section class="section" id="about">
-    <div class="container narrow reveal">
-      <h2>З чим я працюю</h2>
-      <p>Я працюю з дорослими, які проходять через тривогу, складні життєві переходи, труднощі у стосунках та періоди втрати чи змін. Разом ми створюємо стабільний, конфіденційний простір, щоб зрозуміти, що відбувається, і знайти шлях далі — у вашому темпі.</p>
+  <section class="section section-dark" id="about">
+    <div class="container reveal">
+      <div class="about-inner">
+        <div class="about-text">
+          <h2>З чим я працюю</h2>
+          <p>Я працюю з дорослими, які проходять через тривогу, складні життєві переходи, труднощі у стосунках та періоди втрати чи змін. Разом ми створюємо стабільний, конфіденційний простір, щоб зрозуміти, що відбувається, і знайти шлях далі — у вашому темпі.</p>
+        </div>
+        <div class="about-photo">
+          <img src="images/hero.svg" alt="Плейсхолдер — фото Карини скоро з'явиться" width="320" height="400" loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 

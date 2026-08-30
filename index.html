@@ -71,11 +71,12 @@
       <a href="#book">Make an appointment</a>
       <a href="#contacts">Contacts</a>
     </nav>
-    <div class="lang-switch">
-      <a href="index.html" class="active">EN</a>
-      <a href="index-uk.html">UK</a>
-      <a href="index-ru.html">RU</a>
-    </div>
+    <a href="#book" class="btn btn-primary btn-small header-cta">Book a session</a>
+    <select class="lang-select" aria-label="Language" onchange="if(this.value) window.location.href=this.value;">
+      <option value="index.html" selected>EN</option>
+      <option value="index-uk.html">UK</option>
+      <option value="index-ru.html">RU</option>
+    </select>
     <button class="nav-toggle" id="nav-toggle" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -87,23 +88,30 @@
   <!-- Hero -->
   <section class="section hero" id="hero">
     <div class="container hero-inner reveal">
-      <div class="hero-photo">
-        <img src="images/hero.svg" alt="Placeholder illustration — Karina's photo coming soon" width="480" height="600" loading="eager">
-      </div>
       <div class="hero-text">
         <p class="eyebrow">Psychologist</p>
         <h1>A steady place to work through what's weighing on you.</h1>
         <p class="lead">Karina offers individual and family therapy for anxiety, life transitions, and relationship difficulties — online and in person.</p>
         <a href="#book" class="btn btn-primary">Book a session</a>
       </div>
+      <div class="hero-photo">
+        <img src="images/hero-illustration.svg" alt="" aria-hidden="true" width="480" height="600" loading="eager">
+      </div>
     </div>
   </section>
 
   <!-- Specialization -->
-  <section class="section" id="about">
-    <div class="container narrow reveal">
-      <h2>What I work with</h2>
-      <p>I work with adults navigating anxiety, difficult life transitions, relationship difficulties, and periods of loss or change. Together we create a steady, confidential space to understand what's happening and find a way through it — at your pace.</p>
+  <section class="section section-dark" id="about">
+    <div class="container reveal">
+      <div class="about-inner">
+        <div class="about-text">
+          <h2>What I work with</h2>
+          <p>I work with adults navigating anxiety, difficult life transitions, relationship difficulties, and periods of loss or change. Together we create a steady, confidential space to understand what's happening and find a way through it — at your pace.</p>
+        </div>
+        <div class="about-photo">
+          <img src="images/hero.svg" alt="Placeholder illustration — Karina's photo coming soon" width="320" height="400" loading="lazy">
+        </div>
+      </div>
     </div>
   </section>
 
