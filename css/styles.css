@@ -1,20 +1,20 @@
 /* ---------- Design tokens ---------- */
 :root {
-  --color-bg: #faf8f5;
-  --color-bg-alt: #f1ece3;
-  --color-text: #1f2430;
-  --color-text-muted: #5c6270;
-  --color-accent: #c98a3e;
-  --color-accent-dark: #a86f2d;
-  --color-navy: #1a2b46;
-  --color-navy-light: #24365a;
-  --color-border: #e3ddd2;
+  --color-bg: #faf7f0;
+  --color-bg-alt: #eef0e2;
+  --color-text: #2b2f22;
+  --color-text-muted: #6b7060;
+  --color-accent: #5b6b41;
+  --color-accent-dark: #3d4a2b;
+  --color-dark: #3d4a2b;
+  --color-border: #e3ddc9;
 
-  --font-heading: 'Fraunces', Georgia, serif;
+  --font-heading: 'EB Garamond', Georgia, serif;
+  --font-script: 'Allura', cursive;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --container-width: 1120px;
-  --radius: 10px;
+  --radius: 16px;
 }
 
 /* ---------- Reset ---------- */
@@ -69,10 +69,10 @@ p { margin: 0 0 1em; }
   gap: 24px;
 }
 .logo {
-  font-family: var(--font-heading);
-  font-size: 1.4rem;
-  font-weight: 600;
-  color: var(--color-navy);
+  font-family: var(--font-script);
+  font-size: 2.1rem;
+  font-weight: 400;
+  color: var(--color-dark);
 }
 .main-nav {
   display: flex;
@@ -111,7 +111,7 @@ p { margin: 0 0 1em; }
 .nav-toggle span {
   display: block;
   height: 2px;
-  background: var(--color-navy);
+  background: var(--color-dark);
   border-radius: 2px;
 }
 
@@ -260,7 +260,7 @@ p { margin: 0 0 1em; }
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  background: var(--color-navy);
+  background: var(--color-dark);
   color: #fff;
   display: flex;
   align-items: center;
@@ -310,7 +310,7 @@ p { margin: 0 0 1em; }
 .social-links a:hover { color: var(--color-accent-dark); }
 
 .site-footer {
-  background: var(--color-navy);
+  background: var(--color-dark);
   color: #fff;
   padding: 32px 0;
 }
