@@ -164,13 +164,23 @@ p { margin: 0 0 1em; }
   right: 0;
   bottom: 0;
   width: 46%;
+  height: 85%;
+  box-sizing: border-box;
+  background: #d9cfb8;
+  border-radius: 50% 50% 0 0 / 200px 200px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  padding: 48px 28px 0;
 }
 .hero-photo img {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 28px;
-  background: var(--color-bg-alt);
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 16px;
 }
 
 /* ---------- About (dark band) ---------- */
@@ -377,9 +387,12 @@ p { margin: 0 0 1em; }
   .hero-photo {
     position: static;
     width: calc(100% - 48px);
+    height: auto;
     margin: 32px auto 0;
+    border-radius: 50% 50% 0 0 / 120px 120px 0 0;
+    padding: 28px 20px 0;
   }
-  .hero-photo img { border-radius: 20px; }
+  .hero-photo img { border-radius: 14px; }
   .two-col { grid-template-columns: 1fr; gap: 32px; }
   .about-inner { grid-template-columns: 1fr; }
   .about-photo { max-width: 280px; margin: 0 auto; }
