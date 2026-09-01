@@ -68,6 +68,21 @@ if (bookingForm && formSuccess) {
   });
 }
 
+// Diploma slider — scroll one slide width per click
+document.querySelectorAll('.slider').forEach(function (slider) {
+  var track = slider.querySelector('.slider-track');
+  var prevBtn = slider.querySelector('.slider-prev');
+  var nextBtn = slider.querySelector('.slider-next');
+  if (!track) return;
+  function scrollByOneSlide(direction) {
+    var slide = track.querySelector('.slider-slide');
+    var amount = slide ? slide.getBoundingClientRect().width + 20 : track.clientWidth;
+    track.scrollBy({ left: direction * amount, behavior: 'smooth' });
+  }
+  if (prevBtn) prevBtn.addEventListener('click', function () { scrollByOneSlide(-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { scrollByOneSlide(1); });
+});
+
 // Footer year
 var yearEl = document.getElementById('year');
 if (yearEl) { yearEl.textContent = new Date().getFullYear(); }

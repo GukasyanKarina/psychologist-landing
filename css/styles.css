@@ -210,25 +210,67 @@ p { margin: 0 0 1em; }
   color: var(--color-text-muted);
 }
 
-/* ---------- Stat list ---------- */
-.stat-list li {
-  padding: 14px 0;
-  border-bottom: 1px solid var(--color-border);
-}
-.stat-list li:last-child { border-bottom: none; }
-.stat-list strong { color: var(--color-accent-dark); }
-
-/* ---------- Gallery ---------- */
-.gallery-grid {
+/* ---------- Credentials (education / experience) ---------- */
+.credentials-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.credential {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 14px;
+}
+.credential-icon {
+  width: 56px;
+  height: 56px;
+  color: var(--color-accent);
+}
+.credential-icon svg { width: 100%; height: 100%; }
+.credential h3 { margin-bottom: 0.3em; }
+.credential p { color: var(--color-text-muted); margin: 0; }
+
+/* ---------- Diploma slider ---------- */
+.slider {
+  display: flex;
+  align-items: center;
   gap: 16px;
 }
-.gallery-grid img {
+.slider-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 4px 0;
+}
+.slider-track::-webkit-scrollbar { display: none; }
+.slider-slide {
+  flex: 0 0 auto;
+  width: min(320px, 78vw);
+  scroll-snap-align: start;
   border-radius: var(--radius);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 4 / 3;
   object-fit: cover;
 }
+.slider-btn {
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  background: var(--color-dark);
+  color: #fff;
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slider-btn:hover { background: var(--color-accent-dark); }
 
 /* ---------- Cards ---------- */
 .cards-grid {
@@ -375,7 +417,7 @@ p { margin: 0 0 1em; }
   .about-text h2 { text-align: center; }
   .cards-grid { grid-template-columns: 1fr; }
   .rules-grid { grid-template-columns: 1fr; }
-  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .credentials-grid { grid-template-columns: 1fr; gap: 32px; }
 }
 
 @media (max-width: 720px) {
