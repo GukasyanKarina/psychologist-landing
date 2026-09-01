@@ -4,7 +4,7 @@
   --color-bg-alt: #eef0e2;
   --color-text: #2b2f22;
   --color-text-muted: #6b7060;
-  --color-accent: #5b6b41;
+  --color-accent: #6f8350;
   --color-accent-dark: #3d4a2b;
   --color-dark: #3d4a2b;
   --color-border: #e3ddc9;
@@ -173,12 +173,12 @@ p { margin: 0 0 1em; }
 
 /* ---------- About (dark band) ---------- */
 .section-gradient {
-  background: linear-gradient(90deg, var(--color-accent) 0%, #9caf7a 100%);
+  background: linear-gradient(90deg, var(--color-accent) 0%, #c1d0a3 100%);
   color: #fff;
 }
 .section-gradient h2 { color: #fff; }
 .about-text h2 { text-align: left; }
-.section-gradient .about-text p { color: rgba(255, 255, 255, 0.85); }
+.section-gradient .about-text p { color: rgba(255, 255, 255, 0.92); }
 .about-inner {
   display: grid;
   grid-template-columns: 1fr 280px;
