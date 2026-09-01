@@ -193,14 +193,6 @@ p { margin: 0 0 1em; }
   object-fit: cover;
   background: rgba(255, 255, 255, 0.08);
 }
-.eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-accent-dark);
-  margin-bottom: 0.8em;
-}
 .lead {
   font-size: 1.15rem;
   color: var(--color-text-muted);
