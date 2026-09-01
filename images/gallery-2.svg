@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="400" height="400" viewBox="0 0 400 400">
   <rect width="400" height="400" fill="#e3ddc9"/>
-  <rect x="120" y="130" width="160" height="120" rx="10" fill="#cfd4b8"/>
+  <rect x="120" y="130" width="160" height="120" rx="10" fill="#cec9ab"/>
   <text x="200" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#6b7060">Replace me — photo 2</text>
 </svg>

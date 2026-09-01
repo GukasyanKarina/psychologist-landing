@@ -4,9 +4,9 @@
   --color-bg-alt: #eef0e2;
   --color-text: #2b2f22;
   --color-text-muted: #6b7060;
-  --color-accent: #6f8350;
-  --color-accent-dark: #3d4a2b;
-  --color-dark: #52643a;
+  --color-accent: #66653d;
+  --color-accent-dark: #4d4c2e;
+  --color-dark: #3f3e26;
   --color-border: #e3ddc9;
 
   --font-heading: 'EB Garamond', Georgia, serif;
@@ -173,7 +173,7 @@ p { margin: 0 0 1em; }
 
 /* ---------- About (dark band) ---------- */
 .section-gradient {
-  background: linear-gradient(90deg, var(--color-accent) 0%, #c1d0a3 100%);
+  background: linear-gradient(90deg, var(--color-accent) 0%, #c3c2b2 100%);
   color: #fff;
 }
 .section-gradient h2 { color: #fff; }

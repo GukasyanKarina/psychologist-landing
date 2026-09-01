@@ -13,19 +13,19 @@
 
   <!-- vase -->
   <path d="M 210 470 L 270 470 L 262 540 C 260 552, 250 560, 240 560 C 230 560, 220 552, 218 540 Z"
-        fill="#3d4a2b"/>
-  <ellipse cx="240" cy="470" rx="30" ry="8" fill="#2f381f"/>
+        fill="#3f3e26"/>
+  <ellipse cx="240" cy="470" rx="30" ry="8" fill="#2c2b1a"/>
 
   <!-- stems -->
-  <path d="M 240 470 C 235 400, 250 340, 220 260" stroke="#5b6b41" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M 244 470 C 250 410, 235 360, 270 300" stroke="#5b6b41" stroke-width="3" fill="none" stroke-linecap="round"/>
-  <path d="M 236 470 C 232 420, 210 400, 200 350" stroke="#5b6b41" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 240 470 C 235 400, 250 340, 220 260" stroke="#66653d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 244 470 C 250 410, 235 360, 270 300" stroke="#66653d" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M 236 470 C 232 420, 210 400, 200 350" stroke="#66653d" stroke-width="3" fill="none" stroke-linecap="round"/>
 
   <!-- leaves -->
-  <ellipse cx="220" cy="260" rx="10" ry="22" transform="rotate(-20 220 260)" fill="#6b7b4c"/>
-  <ellipse cx="270" cy="300" rx="9" ry="20" transform="rotate(25 270 300)" fill="#6b7b4c"/>
-  <ellipse cx="200" cy="350" rx="8" ry="18" transform="rotate(-35 200 350)" fill="#6b7b4c"/>
-  <ellipse cx="240" cy="230" rx="9" ry="20" fill="#7d8f5a"/>
+  <ellipse cx="220" cy="260" rx="10" ry="22" transform="rotate(-20 220 260)" fill="#7c7b4d"/>
+  <ellipse cx="270" cy="300" rx="9" ry="20" transform="rotate(25 270 300)" fill="#7c7b4d"/>
+  <ellipse cx="200" cy="350" rx="8" ry="18" transform="rotate(-35 200 350)" fill="#7c7b4d"/>
+  <ellipse cx="240" cy="230" rx="9" ry="20" fill="#92916a"/>
 
   <text x="240" y="580" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#6b7060">decorative illustration</text>
 </svg>

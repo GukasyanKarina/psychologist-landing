@@ -8,12 +8,12 @@
   <rect width="480" height="600" fill="url(#bg)"/>
 
   <!-- abstract portrait silhouette -->
-  <circle cx="240" cy="215" r="82" fill="#3d4a2b" opacity="0.85"/>
+  <circle cx="240" cy="215" r="82" fill="#3f3e26" opacity="0.85"/>
   <path d="M 110 560
            C 110 430, 180 380, 240 380
            C 300 380, 370 430, 370 560
-           L 370 600 L 110 600 Z" fill="#3d4a2b" opacity="0.85"/>
-  <circle cx="240" cy="215" r="82" fill="none" stroke="#5b6b41" stroke-width="3"/>
+           L 370 600 L 110 600 Z" fill="#3f3e26" opacity="0.85"/>
+  <circle cx="240" cy="215" r="82" fill="none" stroke="#66653d" stroke-width="3"/>
 
   <text x="240" y="60" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#5c6270">Photo coming soon</text>
 </svg>
