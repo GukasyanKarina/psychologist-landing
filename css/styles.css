@@ -164,20 +164,17 @@ p { margin: 0 0 1em; }
   right: 335px;
   bottom: 0;
   width: 375px;
-  height: 94%;
+  height: 420px;
   box-sizing: border-box;
   background: #d9cfb8;
-  border-radius: 50% 50% 0 0 / 250px 250px 0 0;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
+  border-radius: 50% 50% 0 0 / 130px 130px 0 0;
   overflow: hidden;
 }
 .hero-photo img {
   display: block;
   width: 100%;
-  height: auto;
-  flex-shrink: 0;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* Fixed footprint — as the viewport narrows, the arch doesn't shrink,
@@ -389,15 +386,14 @@ p { margin: 0 0 1em; }
   .hero-photo {
     position: static;
     width: calc(100% - 48px);
-    height: 380px;
+    height: 360px;
     margin: 32px auto 0;
-    border-radius: 50% 50% 0 0 / 120px 120px 0 0;
-    padding: 28px 20px 0;
+    border-radius: 50% 50% 0 0 / 100px 100px 0 0;
   }
   .hero-photo img {
     width: 100%;
-    height: auto;
-    max-height: none;
+    height: 100%;
+    object-fit: cover;
   }
   .two-col { grid-template-columns: 1fr; gap: 32px; }
   .about-inner { grid-template-columns: 1fr; }
