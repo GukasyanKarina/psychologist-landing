@@ -210,32 +210,6 @@ p { margin: 0 0 1em; }
   color: var(--color-text-muted);
 }
 
-/* ---------- Two-column ---------- */
-.two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-}
-.check-list li, .cross-list li {
-  position: relative;
-  padding-left: 28px;
-  margin-bottom: 12px;
-}
-.check-list li::before {
-  content: "✓";
-  position: absolute;
-  left: 0;
-  color: var(--color-accent-dark);
-  font-weight: 700;
-}
-.cross-list li::before {
-  content: "×";
-  position: absolute;
-  left: 0;
-  color: var(--color-text-muted);
-  font-weight: 700;
-}
-
 /* ---------- Stat list ---------- */
 .stat-list li {
   padding: 14px 0;
@@ -396,7 +370,6 @@ p { margin: 0 0 1em; }
     height: 100%;
     object-fit: cover;
   }
-  .two-col { grid-template-columns: 1fr; gap: 32px; }
   .about-inner { grid-template-columns: 1fr; }
   .about-photo { max-width: 280px; margin: 0 auto; }
   .about-text h2 { text-align: center; }
