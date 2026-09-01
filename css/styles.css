@@ -1,13 +1,13 @@
 /* ---------- Design tokens ---------- */
 :root {
-  --color-bg: #faf7f0;
-  --color-bg-alt: #eef0e2;
+  --color-bg: #ede6dc;
+  --color-bg-alt: #e2d7c3;
   --color-text: #2b2f22;
   --color-text-muted: #6b7060;
   --color-accent: #66653d;
   --color-accent-dark: #4d4c2e;
   --color-dark: #3f3e26;
-  --color-border: #e3ddc9;
+  --color-border: #d9cdb5;
 
   --font-heading: 'EB Garamond', Georgia, serif;
   --font-script: 'Allura', cursive;
@@ -57,7 +57,7 @@ p { margin: 0 0 1em; }
   position: sticky;
   top: 0;
   z-index: 50;
-  background: rgba(250, 248, 245, 0.92);
+  background: rgba(237, 230, 220, 0.92);
   backdrop-filter: blur(6px);
   border-bottom: 1px solid var(--color-border);
 }
@@ -161,27 +161,28 @@ p { margin: 0 0 1em; }
 
 .hero-photo {
   position: absolute;
-  right: 0;
+  right: 335px;
   bottom: 0;
-  width: 46%;
-  height: 85%;
+  width: 375px;
+  height: 94%;
   box-sizing: border-box;
   background: #d9cfb8;
-  border-radius: 50% 50% 0 0 / 200px 200px 0 0;
+  border-radius: 50% 50% 0 0 / 250px 250px 0 0;
   display: flex;
   align-items: flex-end;
   justify-content: center;
   overflow: hidden;
-  padding: 48px 28px 0;
 }
 .hero-photo img {
   display: block;
-  width: 100%;
   height: auto;
   max-height: 100%;
-  object-fit: contain;
-  border-radius: 16px;
 }
+
+/* Fixed footprint — as the viewport narrows, the arch doesn't shrink,
+   it just slides toward the right edge until it touches it. */
+@media (max-width: 1600px) { .hero-photo { right: 180px; } }
+@media (max-width: 1300px) { .hero-photo { right: 0; } }
 
 /* ---------- About (dark band) ---------- */
 .section-gradient {
@@ -387,12 +388,16 @@ p { margin: 0 0 1em; }
   .hero-photo {
     position: static;
     width: calc(100% - 48px);
-    height: auto;
+    height: 380px;
     margin: 32px auto 0;
     border-radius: 50% 50% 0 0 / 120px 120px 0 0;
     padding: 28px 20px 0;
   }
-  .hero-photo img { border-radius: 14px; }
+  .hero-photo img {
+    width: 100%;
+    height: auto;
+    max-height: none;
+  }
   .two-col { grid-template-columns: 1fr; gap: 32px; }
   .about-inner { grid-template-columns: 1fr; }
   .about-photo { max-width: 280px; margin: 0 auto; }
