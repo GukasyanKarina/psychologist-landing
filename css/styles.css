@@ -323,8 +323,9 @@ p { margin: 0 0 1em; }
   bottom: 24px;
   max-width: 640px;
   margin: 0 auto;
-  background: var(--color-dark);
-  color: #fff;
+  background: var(--color-bg-alt);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
   border-radius: var(--radius);
   padding: 18px 24px;
   display: flex;
@@ -333,11 +334,11 @@ p { margin: 0 0 1em; }
   gap: 20px;
   flex-wrap: wrap;
   z-index: 90;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 .cookie-banner[hidden] { display: none; }
 .cookie-banner p { margin: 0; font-size: 0.88rem; }
-.cookie-banner a { color: #fff; text-decoration: underline; }
+.cookie-banner a { color: var(--color-accent-dark); text-decoration: underline; }
 
 /* ---------- Cards ---------- */
 .cards-grid {
