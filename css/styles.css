@@ -395,29 +395,14 @@ p { margin: 0 0 1em; }
 
 /* ---------- Contacts / footer ---------- */
 #contacts .container { text-align: center; }
-#contacts .social-links { justify-content: center; }
-
-.social-links {
-  display: flex;
-  gap: 20px;
-}
-.social-links a { font-weight: 600; }
-.social-links a:hover { color: var(--color-accent-dark); }
 
 .site-footer {
   background: var(--color-dark);
   color: #fff;
   padding: 32px 0;
 }
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.footer-inner .social-links a { color: #fff; opacity: 0.85; }
-.footer-inner .social-links a:hover { opacity: 1; }
+.footer-inner { text-align: center; }
+.footer-inner p { margin: 0; }
 
 /* ---------- Scroll-reveal ---------- */
 .reveal {
