@@ -83,6 +83,32 @@ document.querySelectorAll('.slider').forEach(function (slider) {
   if (nextBtn) nextBtn.addEventListener('click', function () { scrollByOneSlide(1); });
 });
 
+// Lightbox — click a diploma slide to see it full size
+var lightbox = document.getElementById('lightbox');
+var lightboxImg = document.getElementById('lightbox-img');
+var lightboxClose = document.getElementById('lightbox-close');
+if (lightbox && lightboxImg) {
+  function openLightbox(src, alt) {
+    lightboxImg.src = src;
+    lightboxImg.alt = alt || '';
+    lightbox.hidden = false;
+  }
+  function closeLightbox() {
+    lightbox.hidden = true;
+    lightboxImg.src = '';
+  }
+  document.querySelectorAll('.slider-slide').forEach(function (img) {
+    img.addEventListener('click', function () { openLightbox(img.src, img.alt); });
+  });
+  if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', function (event) {
+    if (event.target === lightbox) closeLightbox();
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.key === 'Escape' && !lightbox.hidden) closeLightbox();
+  });
+}
+
 // Footer year
 var yearEl = document.getElementById('year');
 if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
