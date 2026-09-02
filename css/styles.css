@@ -394,6 +394,9 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Contacts / footer ---------- */
+#contacts .container { text-align: center; }
+#contacts .social-links { justify-content: center; }
+
 .social-links {
   display: flex;
   gap: 20px;
