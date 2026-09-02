@@ -207,7 +207,7 @@
         <input type="tel" id="phone" name="phone" required>
 
         <button type="submit" class="btn btn-primary">Отправить заявку</button>
-        <p class="consent">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и Политику конфиденциальности.</p>
+        <p class="consent">Нажимая кнопку, вы соглашаетесь на обработку персональных данных и <a href="privacy-ru.html">Политику конфиденциальности</a>.</p>
         <p class="form-success" id="form-success" hidden>Спасибо — заявка отправлена. Карина скоро свяжется с вами.</p>
       </form>
     </div>
@@ -224,13 +224,18 @@
 
 <footer class="site-footer">
   <div class="container footer-inner">
-    <p>© <span id="year">2026</span> Karina Gukasyan</p>
+    <p>© <span id="year">2026</span> Karina Gukasyan · <a href="privacy-ru.html">Политика конфиденциальности</a></p>
   </div>
 </footer>
 
 <div class="lightbox" id="lightbox" hidden>
   <button class="lightbox-close" id="lightbox-close" aria-label="Закрыть">×</button>
   <img id="lightbox-img" src="" alt="">
+</div>
+
+<div class="cookie-banner" id="cookie-banner" hidden>
+  <p>Этот сайт использует cookie для улучшения работы и, когда будет включено, для аналитики. <a href="privacy-ru.html">Подробнее</a></p>
+  <button class="btn btn-primary btn-small" id="cookie-accept">Принять</button>
 </div>
 
 <script src="js/main.js"></script>

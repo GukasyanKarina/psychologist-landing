@@ -1,6 +1,6 @@
 # Karina — landing page
 
-Static site, no build step. Three language versions: `index.html` (EN), `index-uk.html` (UK), `index-ru.html` (RU). Shared `css/styles.css` and `js/main.js`.
+Static site, no build step. Three language versions: `index.html` (EN), `index-uk.html` (UK), `index-ru.html` (RU), plus matching Privacy Policy pages (`privacy.html`, `privacy-uk.html`, `privacy-ru.html`). Shared `css/styles.css` and `js/main.js`.
 
 ## Preview locally
 
@@ -23,9 +23,11 @@ To swap a placeholder photo: replace the file in `images/` (keep the same filena
 3. **Replace placeholder content**: real photos (`images/hero.svg`, `images/gallery-1..4.svg`, `images/og-cover.svg` — can stay SVG or be swapped for real JPG/PNG, just update the `src=`/`content=` references), real phone number, real Telegram/Instagram links (search each file for `REPLACE`), real prices/bio text.
 4. **Replace `REPLACE-WITH-DOMAIN.com`** with the real domain — it appears in `<link rel="canonical">`, `hreflang` tags, Open Graph tags, the JSON-LD blocks, `sitemap.xml`, and `robots.txt` (search-and-replace across all files).
 5. **Turn on search indexing** (it's deliberately OFF during development):
-   - In each of the 3 HTML files, delete the line `<meta name="robots" content="noindex, nofollow">`
+   - In all 6 HTML files (3 language pages + 3 privacy pages), delete the line `<meta name="robots" content="noindex, nofollow">`
    - In `robots.txt`, delete the `Disallow: /` block and uncomment the `Allow: /` + `Sitemap:` lines at the bottom
-6. **Meta Pixel**: once the Meta Ads account is set up, paste the Pixel base code where the `<!-- TODO: paste Meta Pixel base code here -->` comment is in each of the 3 HTML files.
+6. **Meta Pixel**: once the Meta Ads account is set up, paste the Pixel base code where the `<!-- TODO: paste Meta Pixel base code here -->` comment is in each of the 3 main HTML files.
+7. **Privacy Policy is placeholder text** (`privacy.html`, `privacy-uk.html`, `privacy-ru.html`) — it exists only so the site's links/structure are complete. Replace it with real copy reviewed by a lawyer before launch (what data is collected, Formspree's own retention policy, real contact details). The booking form's consent checkbox and the footer both link to this page already.
+8. **Cookie banner** is live (bottom-left popup, dismiss is remembered via `localStorage`) but doesn't gate anything yet since no tracking scripts are installed. Once Google Analytics / Meta Pixel are added (see `js/main.js` TODO comment), wire them to only load after consent is accepted.
 
 ## Deploy (free hosting)
 

@@ -39,6 +39,8 @@ h1, h2, h3 {
 }
 h1 { font-size: clamp(2rem, 4vw + 1rem, 3.2rem); }
 h2 { font-size: clamp(1.6rem, 2vw + 1rem, 2.2rem); text-align: center; }
+.legal h1, .legal h2 { text-align: left; }
+.legal h2 { font-size: 1.3rem; margin-top: 1.6em; }
 h3 { font-size: 1.25rem; }
 p { margin: 0 0 1em; }
 
@@ -313,6 +315,30 @@ p { margin: 0 0 1em; }
 }
 .lightbox-close:hover { background: rgba(255, 255, 255, 0.3); }
 
+/* ---------- Cookie banner ---------- */
+.cookie-banner {
+  position: fixed;
+  left: 24px;
+  right: 24px;
+  bottom: 24px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: var(--color-dark);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  z-index: 90;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+.cookie-banner[hidden] { display: none; }
+.cookie-banner p { margin: 0; font-size: 0.88rem; }
+.cookie-banner a { color: #fff; text-decoration: underline; }
+
 /* ---------- Cards ---------- */
 .cards-grid {
   display: grid;
@@ -388,6 +414,7 @@ p { margin: 0 0 1em; }
   font-size: 0.8rem;
   color: var(--color-text-muted);
 }
+.consent a { text-decoration: underline; }
 .form-success {
   color: var(--color-accent-dark);
   font-weight: 600;
@@ -403,6 +430,8 @@ p { margin: 0 0 1em; }
 }
 .footer-inner { text-align: center; }
 .footer-inner p { margin: 0; }
+.footer-inner a { text-decoration: underline; opacity: 0.85; }
+.footer-inner a:hover { opacity: 1; }
 
 /* ---------- Scroll-reveal ---------- */
 .reveal {

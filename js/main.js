@@ -109,6 +109,26 @@ if (lightbox && lightboxImg) {
   });
 }
 
+// Cookie consent banner
+var cookieBanner = document.getElementById('cookie-banner');
+var cookieAccept = document.getElementById('cookie-accept');
+if (cookieBanner && cookieAccept) {
+  var COOKIE_CONSENT_KEY = 'cookie-consent';
+  try {
+    if (!localStorage.getItem(COOKIE_CONSENT_KEY)) {
+      cookieBanner.hidden = false;
+    }
+  } catch (e) {
+    // localStorage unavailable (e.g. private mode) — skip the banner rather than showing it every load
+  }
+  cookieAccept.addEventListener('click', function () {
+    try { localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted'); } catch (e) {}
+    cookieBanner.hidden = true;
+  });
+}
+// TODO: once Google Analytics / Meta Pixel are added, only load those scripts
+// after localStorage.getItem('cookie-consent') === 'accepted'.
+
 // Footer year
 var yearEl = document.getElementById('year');
 if (yearEl) { yearEl.textContent = new Date().getFullYear(); }
