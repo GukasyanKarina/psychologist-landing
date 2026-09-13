@@ -109,6 +109,20 @@ if (lightbox && lightboxImg) {
   });
 }
 
+// Accordion — working rules section
+document.querySelectorAll('.accordion-item').forEach(function (item) {
+  var trigger = item.querySelector('.accordion-trigger');
+  var panel = item.querySelector('.accordion-panel');
+  var icon = item.querySelector('.accordion-icon');
+  if (!trigger || !panel) return;
+  trigger.addEventListener('click', function () {
+    var isOpen = trigger.getAttribute('aria-expanded') === 'true';
+    trigger.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
+    panel.hidden = isOpen;
+    if (icon) icon.textContent = isOpen ? '+' : '×';
+  });
+});
+
 // Cookie consent banner
 var cookieBanner = document.getElementById('cookie-banner');
 var cookieAccept = document.getElementById('cookie-accept');
