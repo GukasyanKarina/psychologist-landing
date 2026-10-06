@@ -33,41 +33,6 @@ if ('IntersectionObserver' in window && revealEls.length) {
   revealEls.forEach(function (el) { el.classList.add('is-visible'); });
 }
 
-// Booking form: show inline confirmation instead of navigating away
-var bookingForm = document.getElementById('booking-form');
-var formSuccess = document.getElementById('form-success');
-if (bookingForm && formSuccess) {
-  bookingForm.addEventListener('submit', function (event) {
-    var isPlaceholder = bookingForm.action.indexOf('YOUR_FORM_ID') !== -1;
-    if (isPlaceholder) {
-      event.preventDefault();
-      // eslint-disable-next-line no-alert
-      alert('Formspree is not configured yet — replace YOUR_FORM_ID in the form action with the real form ID (see README.md).');
-      return;
-    }
-    event.preventDefault();
-    fetch(bookingForm.action, {
-      method: 'POST',
-      body: new FormData(bookingForm),
-      headers: { Accept: 'application/json' }
-    })
-      .then(function (response) {
-        if (response.ok) {
-          bookingForm.reset();
-          bookingForm.hidden = true;
-          formSuccess.hidden = false;
-        } else {
-          // eslint-disable-next-line no-alert
-          alert('Something went wrong sending the request — please try again or contact directly.');
-        }
-      })
-      .catch(function () {
-        // eslint-disable-next-line no-alert
-        alert('Something went wrong sending the request — please try again or contact directly.');
-      });
-  });
-}
-
 // Diploma slider — scroll one slide width per click
 document.querySelectorAll('.slider').forEach(function (slider) {
   var track = slider.querySelector('.slider-track');
@@ -123,10 +88,12 @@ document.querySelectorAll('.accordion-item').forEach(function (item) {
   });
 });
 
-// Cookie consent banner
+// Cookie consent banner — off until tracking scripts (Meta Pixel / GA) are added.
+// Set TRACKING_ENABLED to true at that point so the banner shows again.
+var TRACKING_ENABLED = false;
 var cookieBanner = document.getElementById('cookie-banner');
 var cookieAccept = document.getElementById('cookie-accept');
-if (cookieBanner && cookieAccept) {
+if (TRACKING_ENABLED && cookieBanner && cookieAccept) {
   var COOKIE_CONSENT_KEY = 'cookie-consent';
   try {
     if (!localStorage.getItem(COOKIE_CONSENT_KEY)) {

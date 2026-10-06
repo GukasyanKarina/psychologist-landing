@@ -9,18 +9,20 @@
 <!-- TODO before launch: remove this line and update robots.txt to allow indexing -->
 <meta name="robots" content="noindex, nofollow">
 
-<link rel="canonical" href="https://REPLACE-WITH-DOMAIN.com/">
+<link rel="canonical" href="https://REPLACE-WITH-DOMAIN.com/index.html">
 <link rel="alternate" hreflang="en" href="https://REPLACE-WITH-DOMAIN.com/index.html">
 <link rel="alternate" hreflang="uk" href="https://REPLACE-WITH-DOMAIN.com/index-uk.html">
 <link rel="alternate" hreflang="ru" href="https://REPLACE-WITH-DOMAIN.com/index-ru.html">
-<link rel="alternate" hreflang="x-default" href="https://REPLACE-WITH-DOMAIN.com/index.html">
+<link rel="alternate" hreflang="x-default" href="https://REPLACE-WITH-DOMAIN.com/index-uk.html">
 
 <!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:title" content="Karina — Psychologist | Support for Life's Turning Points">
 <meta property="og:description" content="Psychologist and Gestalt therapist offering individual and family therapy for anxiety, life transitions, and relationship difficulties.">
-<meta property="og:image" content="https://REPLACE-WITH-DOMAIN.com/images/og-cover.svg">
-<meta property="og:url" content="https://REPLACE-WITH-DOMAIN.com/">
+<meta property="og:image" content="https://REPLACE-WITH-DOMAIN.com/images/og-cover-en.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://REPLACE-WITH-DOMAIN.com/index.html">
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 
@@ -40,7 +42,7 @@
   "email": "karinaguk8891@gmail.com",
   "telephone": "+380636780605",
   "jobTitle": "Psychologist",
-  "url": "https://REPLACE-WITH-DOMAIN.com/",
+  "url": "https://REPLACE-WITH-DOMAIN.com/index.html",
   "image": "https://REPLACE-WITH-DOMAIN.com/images/karina.jpg"
 }
 </script>
@@ -53,7 +55,7 @@
     "@type": "Person",
     "name": "Karina Gukasyan"
   },
-  "areaServed": "Online",
+  "areaServed": ["Odesa", "Online"],
   "description": "Individual and family therapy sessions for anxiety, life transitions and relationship difficulties."
 }
 </script>
@@ -91,7 +93,7 @@
     <div class="container hero-inner reveal">
       <div class="hero-text">
         <h1>A safe space where you and I can work through whatever's troubling you.</h1>
-        <p class="lead">Are you tired? Do you feel drained? Can’t you figure out what you want or who you are? Are you lost in your own life? Can’t you find something to hold onto? Let’s work together, in a calm and safe space, to find a solution and a way out of this tunnel.</p>
+        <p class="lead">Are you tired? Do you feel drained? Can’t figure out what you want or who you are? Are you lost in your own life? Can’t find something to hold onto? Let’s work together, in a calm and safe space, to find a solution and a way out of this tunnel.</p>
         <a href="#book" class="btn btn-primary">Book a session</a>
       </div>
     </div>
@@ -106,7 +108,7 @@
       <div class="about-inner">
         <div class="about-text">
           <h2>Who I work with</h2>
-          <p>Men and women aged 20 to 50, of any sexual orientation and religious beliefs, online or offline in the city of Odessa.</p>
+          <p>Men and women aged 20 to 50, of any sexual orientation and religious beliefs, online or offline in Odesa.</p>
           <p>I do not work with people who are currently using alcohol or drugs. I do work with clients who are in remission.</p>
         </div>
         <div class="about-photo">
@@ -193,7 +195,7 @@
   <!-- Working rules -->
   <section class="section section-alt" id="rules">
     <div class="container reveal">
-      <h2>How we'll work together</h2>
+      <h2>Ground rules</h2>
       <ul class="accordion">
         <li class="accordion-item">
           <button type="button" class="accordion-trigger" aria-expanded="false">
@@ -210,7 +212,7 @@
             <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
           <div class="accordion-panel" hidden>
-            <p>The therapist and client agree on regular weekly sessions at the same time. A session lasts 55-60 minutes (depending on the service). If a session starts at 1:00 PM but the client is late, the session still ends at 1:55 PM. Session time is the client's responsibility. A session can be cancelled or rescheduled up to 24 hours in advance. If the therapist cancels or reschedules with less than 24 hours' notice, the client's next session is free. If the client cancels or reschedules with less than 24 hours' notice, the session is paid in full.</p>
+            <p>The therapist and client agree on regular weekly sessions at the same time. A session lasts 50 minutes (a couples consultation lasts 90 minutes). If a session starts at 1:00 PM but the client is late, the session still ends at 1:50 PM. Session time is the client's responsibility. A session can be cancelled or rescheduled up to 24 hours in advance. If the therapist cancels or reschedules with less than 24 hours' notice, the client's next session is free. If the client cancels or reschedules with less than 24 hours' notice, the session is paid in full.</p>
           </div>
         </li>
         <li class="accordion-item">
@@ -254,7 +256,7 @@
     </div>
   </section>
 
-  <!-- Booking form -->
+  <!-- Booking -->
   <section class="section" id="book">
     <div class="container narrow reveal">
       <h2>Book a session</h2>
@@ -272,20 +274,6 @@
           <span>Viber</span>
         </a>
       </div>
-
-      <!-- Booking form hidden for now: bookings go through messengers. Remove `hidden` to bring it back. -->
-      <!-- TODO: replace YOUR_FORM_ID with the real Formspree form id -->
-      <form class="booking-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="booking-form" hidden>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-
-        <label for="phone">Phone</label>
-        <input type="tel" id="phone" name="phone" required>
-
-        <button type="submit" class="btn btn-primary">Send a request</button>
-        <p class="consent">By clicking the button, you consent to the processing of personal data and agree to the <a href="privacy.html">Privacy Policy</a>.</p>
-        <p class="form-success" id="form-success" hidden>Thank you — your request has been sent. Karina will contact you soon.</p>
-      </form>
     </div>
   </section>
 

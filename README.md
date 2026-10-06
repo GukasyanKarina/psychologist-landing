@@ -14,20 +14,21 @@ npx serve .
 
 Each language is a separate plain HTML file — open it in any editor and change the text between tags. There's no CMS/admin panel by design (see project scope). The same edit (e.g. a price change) needs to be repeated in all three files if it applies to every language.
 
-To swap a placeholder photo: replace the file in `images/` (keep the same filename, or update the `src=` in all three HTML files).
+To swap a photo: replace the file in `images/` (keep the same filename, or update the `src=` in all three HTML files).
+
+Booking is done through messengers (Telegram, WhatsApp, Viber) — the links are in the `#book` section of each page. There is no booking form.
+
+Link previews (Open Graph images for Telegram/WhatsApp/Facebook) are `images/og-cover-{en,uk,ru}.jpg`, 1200×630.
 
 ## Before launch — checklist
 
 1. **Buy a domain** and point it at your host (see Deploy below).
-2. **Formspree**: sign up free at [formspree.io](https://formspree.io), create a form, copy its ID, and replace `YOUR_FORM_ID` in the `<form action="...">` line — it appears once in each of the 3 HTML files.
-3. **Replace placeholder content**: real photos (`images/hero.svg`, `images/gallery-1..4.svg`, `images/og-cover.svg` — can stay SVG or be swapped for real JPG/PNG, just update the `src=`/`content=` references), real phone number, real Telegram/Instagram links (search each file for `REPLACE`), real prices/bio text.
-4. **Replace `REPLACE-WITH-DOMAIN.com`** with the real domain — it appears in `<link rel="canonical">`, `hreflang` tags, Open Graph tags, the JSON-LD blocks, `sitemap.xml`, and `robots.txt` (search-and-replace across all files).
-5. **Turn on search indexing** (it's deliberately OFF during development):
+2. **Replace `REPLACE-WITH-DOMAIN.com`** with the real domain — it appears in `<link rel="canonical">`, `hreflang` tags, Open Graph tags, the JSON-LD blocks, `sitemap.xml`, and `robots.txt` (search-and-replace across all files). Link previews only work once this is done, because `og:image` must be an absolute URL.
+3. **Turn on search indexing** (it's deliberately OFF during development):
    - In all 6 HTML files (3 language pages + 3 privacy pages), delete the line `<meta name="robots" content="noindex, nofollow">`
    - In `robots.txt`, delete the `Disallow: /` block and uncomment the `Allow: /` + `Sitemap:` lines at the bottom
-6. **Meta Pixel**: once the Meta Ads account is set up, paste the Pixel base code where the `<!-- TODO: paste Meta Pixel base code here -->` comment is in each of the 3 main HTML files.
-7. **Privacy Policy is placeholder text** (`privacy.html`, `privacy-uk.html`, `privacy-ru.html`) — it exists only so the site's links/structure are complete. Replace it with real copy reviewed by a lawyer before launch (what data is collected, Formspree's own retention policy, real contact details). The booking form's consent checkbox and the footer both link to this page already.
-8. **Cookie banner** is live (bottom-left popup, dismiss is remembered via `localStorage`) but doesn't gate anything yet since no tracking scripts are installed. Once Google Analytics / Meta Pixel are added (see `js/main.js` TODO comment), wire them to only load after consent is accepted.
+4. **Meta Pixel**: once the Meta Ads account is set up, paste the Pixel base code where the `<!-- TODO: paste Meta Pixel base code here -->` comment is in each of the 3 main HTML files, and update the Cookies section of the privacy policy.
+5. **Cookie banner** is switched off (`TRACKING_ENABLED = false` in `js/main.js`) since no tracking scripts are installed. When adding Meta Pixel / GA, set it to `true`. Once Google Analytics / Meta Pixel are added (see `js/main.js` TODO comment), wire them to only load after consent is accepted.
 
 ## Deploy (free hosting)
 
