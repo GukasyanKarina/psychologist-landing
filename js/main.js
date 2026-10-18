@@ -88,6 +88,64 @@ document.querySelectorAll('.accordion-item').forEach(function (item) {
   });
 });
 
+// Voice player — under the about photo; the "About me" nav link also starts it
+var audioPlayer = document.querySelector('.audio-player');
+if (audioPlayer) {
+  var audio = audioPlayer.querySelector('audio');
+  var audioToggle = audioPlayer.querySelector('.audio-toggle');
+  var audioProgress = audioPlayer.querySelector('.audio-progress');
+  var audioFill = audioPlayer.querySelector('.audio-progress-fill');
+  var audioTime = audioPlayer.querySelector('.audio-time');
+
+  function formatTime(seconds) {
+    if (!isFinite(seconds)) return '0:00';
+    var s = Math.floor(seconds);
+    return Math.floor(s / 60) + ':' + String(s % 60).padStart(2, '0');
+  }
+  function playAudio() {
+    var playing = audio.play();
+    // play() can reject (e.g. file missing) — just leave the player paused
+    if (playing && playing.catch) playing.catch(function () {});
+  }
+  function setPlayingState(isPlaying) {
+    audioPlayer.classList.toggle('is-playing', isPlaying);
+    audioToggle.setAttribute('aria-label', isPlaying ? audioPlayer.dataset.labelPause : audioPlayer.dataset.labelPlay);
+  }
+  function seekTo(fraction) {
+    if (!isFinite(audio.duration)) return;
+    audio.currentTime = Math.min(Math.max(fraction, 0), 1) * audio.duration;
+  }
+
+  audioToggle.addEventListener('click', function () {
+    if (audio.paused) playAudio(); else audio.pause();
+  });
+  audio.addEventListener('play', function () { setPlayingState(true); });
+  audio.addEventListener('pause', function () { setPlayingState(false); });
+  audio.addEventListener('ended', function () { audio.currentTime = 0; });
+  audio.addEventListener('loadedmetadata', function () { audioTime.textContent = formatTime(audio.duration); });
+  audio.addEventListener('timeupdate', function () {
+    var fraction = audio.duration ? audio.currentTime / audio.duration : 0;
+    audioFill.style.width = (fraction * 100) + '%';
+    audioProgress.setAttribute('aria-valuenow', Math.round(fraction * 100));
+    audioTime.textContent = formatTime(audio.paused && audio.currentTime === 0 ? audio.duration : audio.currentTime);
+  });
+  audioProgress.addEventListener('click', function (event) {
+    var rect = audioProgress.getBoundingClientRect();
+    seekTo((event.clientX - rect.left) / rect.width);
+  });
+  audioProgress.addEventListener('keydown', function (event) {
+    if (!audio.duration) return;
+    if (event.key === 'ArrowRight') { seekTo((audio.currentTime + 5) / audio.duration); event.preventDefault(); }
+    if (event.key === 'ArrowLeft') { seekTo((audio.currentTime - 5) / audio.duration); event.preventDefault(); }
+  });
+
+  document.querySelectorAll('a[href="#about"]').forEach(function (link) {
+    link.addEventListener('click', function () {
+      if (audio.paused) playAudio();
+    });
+  });
+}
+
 // Cookie consent banner — off until tracking scripts (Meta Pixel / GA) are added.
 // Set TRACKING_ENABLED to true at that point so the banner shows again.
 var TRACKING_ENABLED = false;

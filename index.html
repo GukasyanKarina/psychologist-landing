@@ -70,7 +70,7 @@
     </a>
     <nav class="main-nav" id="main-nav">
       <a href="#about">About me</a>
-      <a href="#services">Services &amp; Prices</a>
+      <a href="#rules">Rules &amp; Prices</a>
       <a href="#book">Book a session</a>
       <a href="#contacts">Contacts</a>
     </nav>
@@ -113,6 +113,17 @@
         </div>
         <div class="about-photo">
           <img src="images/karina.jpg" alt="Karina Gukasyan, psychologist" width="320" height="400" loading="lazy">
+          <div class="audio-player" data-label-play="Play" data-label-pause="Pause">
+            <audio id="about-audio" src="audio/karina-voice.mp3" preload="metadata"></audio>
+            <button type="button" class="audio-toggle" aria-label="Play">
+              <svg class="audio-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="audio-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+            </button>
+            <div class="audio-progress" role="slider" tabindex="0" aria-label="Seek" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="audio-progress-fill"></div>
+            </div>
+            <span class="audio-time">0:00</span>
+          </div>
         </div>
       </div>
     </div>
@@ -168,32 +179,8 @@
     </div>
   </section>
 
-  <!-- Service formats -->
-  <section class="section" id="services">
-    <div class="container reveal">
-      <h2>How we can work together</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <h3>Consultation</h3>
-          <p>Usually 1-3 meetings where we clearly break down your problem and build a plan of action.</p>
-          <div class="card-meta-row"><span>50 min</span><span>2500 ₴</span></div>
-        </div>
-        <div class="card">
-          <h3>Family Therapy (Couples Consultation)</h3>
-          <p>1-3 meetings where you and your partner can find common ground with each other.</p>
-          <div class="card-meta-row"><span>90 min</span><span>4000 ₴</span></div>
-        </div>
-        <div class="card">
-          <h3>Therapy Session</h3>
-          <p>Long-term work (10+ sessions) where we work through your traumas, process crises, and find unresolved patterns and recurring scenarios. This is work aimed at improving the client's quality of life.</p>
-          <div class="card-meta-row"><span>50 min</span><span>2000 ₴</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Working rules -->
-  <section class="section section-alt" id="rules">
+  <section class="section" id="rules">
     <div class="container reveal">
       <h2>Ground rules</h2>
       <ul class="accordion">
@@ -221,8 +208,21 @@
             <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
           <div class="accordion-panel" hidden>
-            <p>The price may change once a year.</p>
-            <p><strong>Tips, gifts, and advance payment are strictly excluded.</strong> The client only pays for session time at the agreed rate.</p>
+            <div class="accordion-subsection">
+              <p><strong>Consultation</strong></p>
+              <p>Usually 1-3 meetings where we clearly break down your problem and build a plan of action.</p>
+              <p class="accordion-meta"><span>50 min</span> / <span>2500 ₴</span></p>
+            </div>
+            <div class="accordion-subsection">
+              <p><strong>Family Therapy (Couples Consultation)</strong></p>
+              <p>1-3 meetings where you and your partner can find common ground with each other.</p>
+              <p class="accordion-meta"><span>90 min</span> / <span>4000 ₴</span></p>
+            </div>
+            <div class="accordion-subsection">
+              <p><strong>Therapy Session</strong></p>
+              <p>Long-term work (10+ sessions) where we work through your traumas, process crises, and find unresolved patterns and recurring scenarios. This is work aimed at improving the client's quality of life.</p>
+              <p class="accordion-meta"><span>50 min</span> / <span>2000 ₴</span></p>
+            </div>
           </div>
         </li>
         <li class="accordion-item">
@@ -257,7 +257,7 @@
   </section>
 
   <!-- Booking -->
-  <section class="section" id="book">
+  <section class="section section-alt" id="book">
     <div class="container narrow reveal">
       <h2>Book a session</h2>
       <div class="messengers">
@@ -278,7 +278,7 @@
   </section>
 
   <!-- Contacts -->
-  <section class="section section-alt" id="contacts">
+  <section class="section" id="contacts">
     <div class="container narrow reveal">
       <h2>Contacts</h2>
       <p><a href="tel:+380636780605">+380 63 678 06 05</a></p>

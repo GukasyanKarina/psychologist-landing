@@ -69,7 +69,7 @@
     </a>
     <nav class="main-nav" id="main-nav">
       <a href="#about">Про мене</a>
-      <a href="#services">Послуги та ціни</a>
+      <a href="#rules">Правила та ціни</a>
       <a href="#book">Записатись</a>
       <a href="#contacts">Контакти</a>
     </nav>
@@ -110,6 +110,17 @@
         </div>
         <div class="about-photo">
           <img src="images/karina.jpg" alt="Карина Гукасян, психолог" width="320" height="400" loading="lazy">
+          <div class="audio-player" data-label-play="Слухати" data-label-pause="Пауза">
+            <audio id="about-audio" src="audio/karina-voice.mp3" preload="metadata"></audio>
+            <button type="button" class="audio-toggle" aria-label="Слухати">
+              <svg class="audio-icon-play" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+              <svg class="audio-icon-pause" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 5h4v14H7zM13 5h4v14h-4z"/></svg>
+            </button>
+            <div class="audio-progress" role="slider" tabindex="0" aria-label="Перемотка" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="audio-progress-fill"></div>
+            </div>
+            <span class="audio-time">0:00</span>
+          </div>
         </div>
       </div>
     </div>
@@ -163,30 +174,7 @@
     </div>
   </section>
 
-  <section class="section" id="services">
-    <div class="container reveal">
-      <h2>Як ми можемо працювати разом</h2>
-      <div class="cards-grid">
-        <div class="card">
-          <h3>Консультація</h3>
-          <p>Зазвичай це 1-3 зустрічі, на яких ми чітко розбираємо твою проблему і будуємо план дій.</p>
-          <div class="card-meta-row"><span>50 хв</span><span>2500 ₴</span></div>
-        </div>
-        <div class="card">
-          <h3>Сімейна терапія (Парна консультація)</h3>
-          <p>1-3 зустрічі, на яких ти з партнером/партнеркою зможеш знайти спільну мову одне з одним.</p>
-          <div class="card-meta-row"><span>90 хв</span><span>4000 ₴</span></div>
-        </div>
-        <div class="card">
-          <h3>Сеанс терапії</h3>
-          <p>Довгострокова робота (від 10 сесій), в якій ми опрацьовуємо твої травми, проживаємо кризи, знаходимо незакриті гештальти, повторювані сценарії. Це робота над підвищенням якості життя клієнта.</p>
-          <div class="card-meta-row"><span>50 хв</span><span>2000 ₴</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section section-alt" id="rules">
+  <section class="section" id="rules">
     <div class="container reveal">
       <h2>Правила роботи</h2>
       <ul class="accordion">
@@ -214,8 +202,21 @@
             <span class="accordion-icon" aria-hidden="true">+</span>
           </button>
           <div class="accordion-panel" hidden>
-            <p>Вартість може змінюватися один раз на рік.</p>
-            <p><strong>Чайові/подарунки/оплата наперед - категорично виключені.</strong> Клієнт оплачує лише час сесії за тією вартістю, про яку домовилися з терапевтом.</p>
+            <div class="accordion-subsection">
+              <p><strong>Консультація</strong></p>
+              <p>Зазвичай це 1-3 зустрічі, на яких ми чітко розбираємо твою проблему і будуємо план дій.</p>
+              <p class="accordion-meta"><span>50 хв</span> / <span>2500 ₴</span></p>
+            </div>
+            <div class="accordion-subsection">
+              <p><strong>Сімейна терапія (Парна консультація)</strong></p>
+              <p>1-3 зустрічі, на яких ти з партнером/партнеркою зможеш знайти спільну мову одне з одним.</p>
+              <p class="accordion-meta"><span>90 хв</span> / <span>4000 ₴</span></p>
+            </div>
+            <div class="accordion-subsection">
+              <p><strong>Сеанс терапії</strong></p>
+              <p>Довгострокова робота (від 10 сесій), в якій ми опрацьовуємо твої травми, проживаємо кризи, знаходимо незакриті гештальти, повторювані сценарії. Це робота над підвищенням якості життя клієнта.</p>
+              <p class="accordion-meta"><span>50 хв</span> / <span>2000 ₴</span></p>
+            </div>
           </div>
         </li>
         <li class="accordion-item">
@@ -234,6 +235,7 @@
           </button>
           <div class="accordion-panel" hidden>
             <p>Стосунки терапевта і клієнта залишаються тільки в кабінеті. Між сесіями клієнт і терапевт не можуть дружити, дарувати чи приймати подарунки, ходити на каву тощо. Клієнт не може надавати послугу терапевту (наприклад, клієнт - майстер манікюру і хоче запропонувати свої послуги терапевту - таке неприпустимо в психотерапевтичній роботі).</p>
+            <p><strong>Чайові/подарунки/оплата наперед - категорично виключені.</strong> Клієнт оплачує лише час сесії за тією вартістю, про яку домовилися з терапевтом.</p>
           </div>
         </li>
         <li class="accordion-item">
@@ -249,7 +251,7 @@
     </div>
   </section>
 
-  <section class="section" id="book">
+  <section class="section section-alt" id="book">
     <div class="container narrow reveal">
       <h2>Записатись на сесію</h2>
       <div class="messengers">
@@ -269,7 +271,7 @@
     </div>
   </section>
 
-  <section class="section section-alt" id="contacts">
+  <section class="section" id="contacts">
     <div class="container narrow reveal">
       <h2>Контакти</h2>
       <p><a href="tel:+380636780605">+380 63 678 06 05</a></p>
