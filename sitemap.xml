@@ -2,21 +2,21 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://REPLACE-WITH-DOMAIN.com/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://REPLACE-WITH-DOMAIN.com/index.html"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://REPLACE-WITH-DOMAIN.com/index-uk.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://REPLACE-WITH-DOMAIN.com/index-ru.html"/>
+    <loc>https://gukasyan-karina.netlify.app/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gukasyan-karina.netlify.app/index.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://gukasyan-karina.netlify.app/index-uk.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gukasyan-karina.netlify.app/index-ru.html"/>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-DOMAIN.com/index-uk.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://REPLACE-WITH-DOMAIN.com/index.html"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://REPLACE-WITH-DOMAIN.com/index-uk.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://REPLACE-WITH-DOMAIN.com/index-ru.html"/>
+    <loc>https://gukasyan-karina.netlify.app/index-uk.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gukasyan-karina.netlify.app/index.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://gukasyan-karina.netlify.app/index-uk.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gukasyan-karina.netlify.app/index-ru.html"/>
   </url>
   <url>
-    <loc>https://REPLACE-WITH-DOMAIN.com/index-ru.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://REPLACE-WITH-DOMAIN.com/index.html"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://REPLACE-WITH-DOMAIN.com/index-uk.html"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://REPLACE-WITH-DOMAIN.com/index-ru.html"/>
+    <loc>https://gukasyan-karina.netlify.app/index-ru.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://gukasyan-karina.netlify.app/index.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://gukasyan-karina.netlify.app/index-uk.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://gukasyan-karina.netlify.app/index-ru.html"/>
   </url>
 </urlset>

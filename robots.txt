@@ -1,9 +1,4 @@
-# DEV MODE — site not ready for search engines yet.
-# Blocks all crawlers while the site is a draft/preview.
 User-agent: *
-Disallow: /
+Allow: /
 
-# --- ON LAUNCH: delete the two lines above and uncomment below ---
-# User-agent: *
-# Allow: /
-# Sitemap: https://REPLACE-WITH-DOMAIN.com/sitemap.xml
+Sitemap: https://gukasyan-karina.netlify.app/sitemap.xml
