@@ -63,7 +63,7 @@ if (lightbox && lightboxImg) {
     lightboxImg.src = '';
   }
   document.querySelectorAll('.slider-slide').forEach(function (img) {
-    img.addEventListener('click', function () { openLightbox(img.src, img.alt); });
+    img.addEventListener('click', function () { openLightbox(img.dataset.full || img.src, img.alt); });
   });
   if (lightboxClose) lightboxClose.addEventListener('click', closeLightbox);
   lightbox.addEventListener('click', function (event) {
