@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Карина Гукасян — психолог в Одесі та онлайн | Гештальт-терапія</title>
 <meta name="description" content="Психолог і гештальт-терапевт Карина Гукасян: індивідуальна та сімейна терапія в Одесі та онлайн. Тривога, життєві кризи, труднощі у стосунках.">
+<meta name="google-site-verification" content="ZjSqVpC4DZOvHRdAWCLgZmFvlKV9M5KGNBUafgVMt0w">
 
 <link rel="canonical" href="https://gukasyan-karina.netlify.app/index-uk.html">
 <link rel="alternate" hreflang="en" href="https://gukasyan-karina.netlify.app/index.html">
@@ -24,7 +25,10 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Allura&family=Bad+Script&family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<!-- Fonts load without blocking first paint; Allura is subset to the logo's letters -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Allura&text=Karina%20Gukasyan&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@500;600;700&family=Inter:wght@400;500;600&display=swap"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Allura&text=Karina%20Gukasyan&display=swap"></noscript>
 
 <link rel="icon" href="favicon.ico" sizes="48x48">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -72,7 +76,6 @@
   <div class="container header-inner">
     <a href="#top" class="logo-block">
       <span class="logo">Karina Gukasyan</span>
-      <span class="logo-tagline">Психолог</span>
     </a>
     <nav class="main-nav" id="main-nav">
       <a href="#about">Про мене</a>
@@ -95,15 +98,18 @@
 <main id="top">
 
   <section class="section hero" id="hero">
-    <div class="container hero-inner reveal">
+    <div class="container hero-inner">
       <div class="hero-text">
-        <h1>Безпечний простір, де ми з тобою розберемося з тим, що тебе турбує.</h1>
+        <h1><span class="hero-kicker">Психолог, гештальт-терапевт<br>Одеса, онлайн</span>Безпечний простір, де ми з тобою розберемося з тим, що тебе турбує.</h1>
         <p class="lead">Ти втомився? У тебе немає сил? Ти не можеш зрозуміти, чого ти хочеш і хто ти? Ти загубився у власному житті? Ти не можеш знайти опору? Давай разом, у тихому й безпечному спілкуванні, знайдемо рішення та вихід із тунелю.</p>
         <a href="#book" class="btn btn-primary">Записатись на сесію</a>
       </div>
     </div>
     <div class="hero-photo">
-      <img src="images/hero.jpg" alt="Затишне крісло біля вікна з видом на море" loading="eager">
+      <picture>
+        <source type="image/webp" srcset="images/hero-640.webp 640w, images/hero-1023.webp 1023w" sizes="(max-width: 860px) calc(100vw - 48px), 460px">
+        <img src="images/hero.jpg" alt="Затишне крісло біля вікна з видом на море" width="1023" height="1537" loading="eager" fetchpriority="high">
+      </picture>
     </div>
   </section>
 

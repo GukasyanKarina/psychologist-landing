@@ -10,7 +10,7 @@
   --color-border: #e3cfc7;
 
   --font-heading: 'EB Garamond', Georgia, serif;
-  --font-script: 'Allura', 'Bad Script', cursive;
+  --font-script: 'Allura', cursive;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --container-width: 1120px;
@@ -164,6 +164,17 @@ p { margin: 0 0 1em; }
 .hero { position: relative; }
 .hero-inner { padding-top: 24px; }
 .hero-text { max-width: 520px; }
+.hero-kicker {
+  display: block;
+  margin-bottom: 14px;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.5;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
 
 .hero-photo {
   position: absolute;
@@ -176,6 +187,7 @@ p { margin: 0 0 1em; }
   border-radius: 50% 50% 0 0 / 160px 160px 0 0;
   overflow: hidden;
 }
+.hero-photo picture { display: block; width: 100%; height: 100%; }
 .hero-photo img {
   display: block;
   width: 100%;
