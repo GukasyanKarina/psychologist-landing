@@ -146,27 +146,76 @@ if (audioPlayer) {
   });
 }
 
-// Cookie consent banner — off until tracking scripts (Meta Pixel / GA) are added.
-// Set TRACKING_ENABLED to true at that point so the banner shows again.
-var TRACKING_ENABLED = false;
+// Cookie consent banner + Meta Pixel. The Pixel (and its cookies) loads only
+// after the visitor clicks Accept; the choice itself is kept in localStorage.
+var META_PIXEL_ID = '1647264933465842';
+var COOKIE_CONSENT_KEY = 'cookie-consent';
+
+function getConsent() {
+  // undefined = localStorage unavailable (e.g. private mode), null = not chosen yet
+  try { return localStorage.getItem(COOKIE_CONSENT_KEY); } catch (e) { return undefined; }
+}
+function setConsent(value) {
+  try { localStorage.setItem(COOKIE_CONSENT_KEY, value); } catch (e) {}
+}
+
+function loadMetaPixel() {
+  if (window.fbq) return;
+  // Meta Pixel base code
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+  n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+  document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', META_PIXEL_ID);
+  fbq('track', 'PageView');
+}
+
 var cookieBanner = document.getElementById('cookie-banner');
 var cookieAccept = document.getElementById('cookie-accept');
-if (TRACKING_ENABLED && cookieBanner && cookieAccept) {
-  var COOKIE_CONSENT_KEY = 'cookie-consent';
-  try {
-    if (!localStorage.getItem(COOKIE_CONSENT_KEY)) {
-      cookieBanner.hidden = false;
-    }
-  } catch (e) {
-    // localStorage unavailable (e.g. private mode) — skip the banner rather than showing it every load
-  }
+var cookieDecline = document.getElementById('cookie-decline');
+var consent = getConsent();
+if (consent === 'accepted') {
+  loadMetaPixel();
+} else if (consent === null && cookieBanner) {
+  cookieBanner.hidden = false;
+}
+if (cookieBanner && cookieAccept) {
   cookieAccept.addEventListener('click', function () {
-    try { localStorage.setItem(COOKIE_CONSENT_KEY, 'accepted'); } catch (e) {}
+    setConsent('accepted');
+    cookieBanner.hidden = true;
+    loadMetaPixel();
+  });
+}
+if (cookieBanner && cookieDecline) {
+  cookieDecline.addEventListener('click', function () {
+    setConsent('declined');
     cookieBanner.hidden = true;
   });
 }
-// TODO: once Google Analytics / Meta Pixel are added, only load those scripts
-// after localStorage.getItem('cookie-consent') === 'accepted'.
+
+// "Withdraw consent" link on the privacy pages
+var cookieReset = document.getElementById('cookie-reset');
+if (cookieReset) {
+  cookieReset.addEventListener('click', function (event) {
+    event.preventDefault();
+    setConsent('declined');
+    cookieReset.textContent = cookieReset.dataset.done;
+  });
+}
+
+// Count messenger and phone clicks as Contact events — these are the bookings.
+// Only fires when the Pixel was loaded, i.e. the visitor accepted cookies.
+document.querySelectorAll('a[href^="https://t.me/"], a[href^="https://wa.me/"], a[href^="viber:"], a[href^="tel:"]').forEach(function (link) {
+  link.addEventListener('click', function () {
+    if (!window.fbq) return;
+    var href = link.getAttribute('href');
+    var channel = href.indexOf('t.me') !== -1 ? 'telegram'
+      : href.indexOf('wa.me') !== -1 ? 'whatsapp'
+      : href.indexOf('viber') === 0 ? 'viber' : 'phone';
+    fbq('track', 'Contact', { channel: channel });
+  });
+});
 
 // Footer year
 var yearEl = document.getElementById('year');

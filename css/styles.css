@@ -155,6 +155,12 @@ p { margin: 0 0 1em; }
   background: var(--color-accent);
   color: #fff;
 }
+.btn-secondary {
+  background: transparent;
+  color: var(--color-text);
+  box-shadow: inset 0 0 0 1px var(--color-border);
+}
+.btn-secondary:hover { box-shadow: inset 0 0 0 1px var(--color-text); }
 .btn-primary:hover {
   background: var(--color-accent-dark);
   transform: translateY(-1px);
@@ -418,6 +424,7 @@ p { margin: 0 0 1em; }
 .cookie-banner[hidden] { display: none; }
 .cookie-banner p { margin: 0; font-size: 0.88rem; }
 .cookie-banner a { color: var(--color-accent-dark); text-decoration: underline; }
+.cookie-actions { display: flex; gap: 10px; }
 
 /* ---------- Rules (accordion) ---------- */
 .accordion {
